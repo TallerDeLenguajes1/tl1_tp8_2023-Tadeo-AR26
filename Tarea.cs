@@ -4,12 +4,13 @@ namespace Espacio.Tarea{
         private string? descripcion;
         private int duracion;
 
-        public int TareaID { set => tareaID = value; }
+   
         public string Descripcion { set => descripcion = value; }
         public int Duracion { set => duracion = value; }
+        public int TareaID { get => tareaID; set => tareaID = value; }
 
         public void MostrarTarea(){
-            Console.WriteLine($"Tarea Nº {tareaID}");
+            Console.WriteLine($"Tarea Nº {TareaID}");
             Console.WriteLine($"Descripcion: {descripcion}");
             Console.WriteLine($"Duracion: {duracion}");
         }
