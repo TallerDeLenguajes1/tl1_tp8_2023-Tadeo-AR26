@@ -1,5 +1,5 @@
-namespace Espacio.Tareas{
-    public class Tareas{
+namespace Espacio.Tarea{
+    public class Tarea{
         private int tareaID;
         private string? descripcion;
         private int duracion;
@@ -8,6 +8,11 @@ namespace Espacio.Tareas{
         public string Descripcion { set => descripcion = value; }
         public int Duracion { set => duracion = value; }
 
-        
+        public void MostrarTarea(){
+            Console.WriteLine($"Tarea Nº {tareaID}");
+            Console.WriteLine($"Descripcion: {descripcion}");
+            Console.WriteLine($"Duracion: {duracion}");
+        }
+
     }
 }
