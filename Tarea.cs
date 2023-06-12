@@ -5,8 +5,8 @@ namespace Espacio.Tarea{
         private int duracion;
 
    
-        public string Descripcion { set => descripcion = value; }
-        public int Duracion { set => duracion = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public int Duracion { get => duracion; set => duracion = value; }
         public int TareaID { get => tareaID; set => tareaID = value; }
 
         public void MostrarTarea(){

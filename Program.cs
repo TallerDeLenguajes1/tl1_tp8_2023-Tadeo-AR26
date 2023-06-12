@@ -8,6 +8,7 @@ List<Tarea> TareasRealizadas = new List<Tarea>();
 
 string salir = "";
 int num = 1;
+int horasTrabajadas = 0;
 do{
     Console.WriteLine("Ingrese una descripcion para la tarea");
     string DescTarea = "";
@@ -50,9 +51,27 @@ do{
 Console.WriteLine("******* TAREAS PENDIENTES *******");
 foreach(Tarea tarea in TareasPendientes){
     tarea.MostrarTarea();
+    horasTrabajadas += tarea.Duracion;
 }
 
 Console.WriteLine("******* TAREAS REALIZADAS *******");
 foreach(Tarea tarea in TareasRealizadas){
     tarea.MostrarTarea();
+    horasTrabajadas += tarea.Duracion;
 }
+
+Console.WriteLine("Desea buscar una tarea por descripcion? y/n");
+salir = Console.ReadLine();
+if(salir == "y"){
+    Console.WriteLine("Ingrese la descripcion");
+    string desc = Console.ReadLine();
+    foreach(Tarea tarea in TareasPendientes){
+        if(tarea.Descripcion.Contains(desc)){
+            tarea.MostrarTarea();
+        }
+    }
+}
+
+StreamWriter sw = new StreamWriter("Horas_trabajadas.txt");
+sw.WriteLine($"Horas trabajadas = {horasTrabajadas}");
+sw.Close();
